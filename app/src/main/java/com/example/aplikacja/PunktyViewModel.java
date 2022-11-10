@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class PunktyViewModel extends ViewModel {
-    private MutableLiveData<Integer> punkty; //Mozna uzyc bo dodalismy w build.gradle
+    private MutableLiveData<Integer> punkty = new MutableLiveData<>(); //Mozna uzyc bo dodalismy w build.gradle
     //MutableLiveData to zapisana klasa wartosci czy cos
 
     public MutableLiveData<Integer> getPunkty() {
@@ -24,5 +24,8 @@ public class PunktyViewModel extends ViewModel {
         {
             punkty.setValue(punkty.getValue()+i);
         }
+    }
+    public int getP(){
+        return punkty.getValue();
     }
 }
